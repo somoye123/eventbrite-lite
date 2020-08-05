@@ -4,7 +4,12 @@ class SessionsController < ApplicationController
     end
     
     def create
-      @user = User.find_by(name: params[:session][:user]) || User.find(params[:session][:user].to_i)
+      begin
+        @user = User.find_by(name: params[:session][:user]) || User.find(params[:session][:user].to_i)
+      rescue => exception
+        flash.now[:danger] = "There was something wrong with the login information"
+      end
+      
       if @user 
           session[:user_id] = @user.id
           session[:username] = @user.name

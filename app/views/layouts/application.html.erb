@@ -10,6 +10,21 @@
   </head>
 
   <body>
+  <div class="text-center mt-3 mb-4">
+    <%= link_to 'login', sign_in_path, class: 'btn btn-info' %>
+    <%= link_to 'Signup', new_user_path, class: 'btn btn-secondary ml-2'%>
+    <br>
+
+
+    <% flash.each do |name, msg| %>
+      <div class='alert alert-<%="#{name}" %>'>
+        <a href="#" class="close" data-dismiss="alert">
+          &#215;
+        </a>
+        <%= msg %>
+      </div>
+    <% end %>
+
     
     <%= yield %>
     <div class="text-center">
