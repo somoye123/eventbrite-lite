@@ -19,19 +19,38 @@
 <%end%>
 
 <% if @user.attended_events.size > 0%>
-    <h6 class="text-center">List of attended events</h6>
-    <div class="text-center">
-        <% @user.attended_events.each do |event| %>
-            <div class="card my-3">
-                <div class="card-header">
-                    <strong><%= event.name %></strong> 
+    <% if @upcoming_events.size > 0%>
+        <h6 class="text-center">List of upcoming events</h6>
+        <div class="text-center">
+            <% @upcoming_events.each do |event| %>
+                <div class="card my-3">
+                    <div class="card-header">
+                        <strong><%= event.name %></strong> 
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text"><%= event.description %></p>
+                        <p class="card-text"><%= event.location %></p>
+                        <p class="card-text"><%= event.date %></p>
+                    </div>
                 </div>
-                <div class="card-body text-center">
-                    <p class="card-text"><%= event.description %></p>
-                    <p class="card-text"><%= event.location %></p>
-                    <p class="card-text"><%= event.date %></p>
+            <% end %>
+        </div>
+    <%end%>
+    <% if @prev_events.size > 0%>
+        <h6 class="text-center">List of Previously attended events</h6>
+        <div class="text-center">
+            <% @prev_events.each do |event| %>
+                <div class="card my-3">
+                    <div class="card-header">
+                        <strong><%= event.name %></strong> 
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="card-text"><%= event.description %></p>
+                        <p class="card-text"><%= event.location %></p>
+                        <p class="card-text"><%= event.date %></p>
+                    </div>
                 </div>
-            </div>
-        <% end %>
-    </div>
+            <% end %>
+        </div>
+    <%end%>
 <%end%>

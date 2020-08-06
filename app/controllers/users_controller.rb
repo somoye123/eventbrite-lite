@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
+        @upcoming_events = @user.attended_events.where(["date > ?", Date.today])
+        @prev_events = @user.attended_events.where(["date < ?", Date.today])
     end
 
     def destroy
@@ -34,4 +36,3 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name)
     end
 end
-    
