@@ -15,10 +15,7 @@
             <%= f.text_field :location, placeholder: "Event Location", class: "form-control"  %>
         </div>
           <div class="form-group">
-            <%# <%= select_datetime Date.today, :prefix => :date %> 
             <%= f.datetime_select :date, :ampm => true, :minute_step => 15 %>
-            <%#= datetime :date, placeholder: "Event Date", class: "form-control" %>
-            <%#= f.datetime_local_field :date, placeholder: "Event Date", class: "form-control"  %>
         </div>
         <div class="actions">
           <%= f.submit class: "btn btn-primary" %>
