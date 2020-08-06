@@ -3,6 +3,7 @@
 <h4 class="text-centet">
     <%= @event.creator.name  %> 
 </h4>
+<h6>List of attendees</h6>
 <ul>
 <% @event.attendees.each do |attendee|%>
 <li><%= attendee.name%></li>
