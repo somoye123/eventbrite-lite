@@ -1,29 +1,26 @@
 class SessionsController < ApplicationController
-    def new
-    
+  def new; end
+
+  def create
+    begin
+      @user = User.find_by(name: params[:session][:user]) || User.find(params[:session][:user].to_i)
+    rescue StandardError => e
+      flash.now[:danger] = 'There was something wrong with the login information'
     end
-    
-    def create
-      
-      begin
-        @user = User.find_by(name: params[:session][:user]) || User.find(params[:session][:user].to_i)
-      rescue => exception
-        flash.now[:danger] = "There was something wrong with the login information"
-      end
-      
-      if @user 
-          session[:user_id] = @user.id
-          session[:username] = @user.name
-          redirect_to user_path(@user)
-      else
-        flash.now[:danger] = "There was something wrong with the login information"
-        render 'new'
-      end    
+
+    if @user
+      session[:user_id] = @user.id
+      session[:username] = @user.name
+      redirect_to user_path(@user)
+    else
+      flash.now[:danger] = 'There was something wrong with the login information'
+      render 'new'
     end
-    
-    def destroy
-      session[:user_id] = nil
-      flash[:success] = "You have successfully logged out"
-      redirect_to root_path    
-    end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    flash[:success] = 'You have successfully logged out'
+    redirect_to root_path
+  end
 end
