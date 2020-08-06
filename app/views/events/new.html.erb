@@ -3,9 +3,22 @@
     <div class="col-md-2"></div>
     <div class="col-md-8">
       <h1 class="text-center">Add Event</h1>
+      
       <%= form_for(@event) do |f| %>
         <div class="form-group">
-            <%= f.text_area :description, autofocus: true, placeholder: "Event Description", class: "form-control"  %>
+            <%= f.text_field :name, autofocus: true, placeholder: "Event Title", class: "form-control"  %>
+        </div>
+        <div class="form-group">
+            <%= f.text_area :description, placeholder: "Event Description", class: "form-control"  %>
+        </div>
+        <div class="form-group">
+            <%= f.text_field :location, placeholder: "Event Location", class: "form-control"  %>
+        </div>
+          <div class="form-group">
+            <%# <%= select_datetime Date.today, :prefix => :date %> 
+            <%= f.datetime_select :date, :ampm => true, :minute_step => 15 %>
+            <%#= datetime :date, placeholder: "Event Date", class: "form-control" %>
+            <%#= f.datetime_local_field :date, placeholder: "Event Date", class: "form-control"  %>
         </div>
         <div class="actions">
           <%= f.submit class: "btn btn-primary" %>
