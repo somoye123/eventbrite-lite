@@ -2,7 +2,8 @@ class EventsController < ApplicationController
     before_action :require_user, except: [:index]
     
     def index
-        @events = Event.all
+        @past = Event.past
+        @upcoming = Event.upcoming
     end
 
     def new
@@ -24,6 +25,14 @@ class EventsController < ApplicationController
     def show
         @event = Event.find(params[:id])
     end
+
+    # def self.past
+    #     Event.where(["date < ?", Date.today])
+    # end
+
+    # def self.upcoming
+    #     Event.where(["date > ?", Date.today])
+    # end
 
     private
     
