@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :destroy]
   get 'sign_in', to: "sessions#new"
   post 'sign_in', to: "sessions#create"
+
+  resources :events
 end

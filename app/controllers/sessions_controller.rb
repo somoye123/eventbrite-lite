@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
     end
     
     def create
+      
       begin
         @user = User.find_by(name: params[:session][:user]) || User.find(params[:session][:user].to_i)
       rescue => exception
