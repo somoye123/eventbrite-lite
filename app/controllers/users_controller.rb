@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(sign_up_params)
     if @user.save
-      flash[:notice] = 'Post was created successfully'
+      flash[:notice] = 'Account was created successfully'
       session[:user_id] = @user.id
       session[:username] = @user.name
       redirect_to user_path(@user)

@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    @user = User.find_by(name: params[:session][:user]) if logged_in?
+    @user = User.find_by(name: params[:session][:user])
     # @user ||= User.find(params[:session][:user].to_i)
 
     if @user
