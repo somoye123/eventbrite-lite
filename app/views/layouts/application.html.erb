@@ -10,11 +10,9 @@
   </head>
 
   <body>
-  <div class="text-center mt-3 mb-4">
-    <%= show_sign_in_or_out %>
-    <%= link_to 'Create Event', new_event_path %>
-    <br>
 
+  <%= render 'layouts/navbar' %>
+    
 
     <% flash.each do |name, msg| %>
       <div class='alert alert-<%="#{name}" %>'>
@@ -26,7 +24,9 @@
     <% end %>
 
     
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
 
   </body>
 </html>
