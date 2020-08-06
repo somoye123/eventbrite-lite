@@ -3,4 +3,10 @@
 <h4 class="text-centet">
     <%= @event.creator.name  %> 
 </h4>
+<ul>
+<% @event.attendees.each do |attendee|%>
+<li><%= attendee.name%></li>
+<% end %>
+
+</ul>
 <%= link_to 'Back', :back %>
