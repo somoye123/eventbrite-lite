@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-    before_action :require_user
+    before_action :require_user, except: [:index]
     
     def index
         @events = Event.all
@@ -19,6 +19,10 @@ class EventsController < ApplicationController
             flash[:alert] = 'Woops something went wrong'
             render 'new'
         end
+    end
+
+    def show
+        @event = Event.find(params[:id])
     end
 
     private

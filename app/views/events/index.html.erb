@@ -1,1 +1,8 @@
-<h1>Hey there!</h1>
+<h1>Events</h1>
+<% @events.each do |event| %>
+<h4 class="text-centet">
+    <%= link_to event.description, event_path(event) %> 
+
+    <small><em>by <%= event.creator.name %></em></small>
+</h4>
+<% end %>
