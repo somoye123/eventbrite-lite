@@ -24,15 +24,8 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    @users = User.all
   end
-
-  # def self.past
-  #     Event.where(["date < ?", Date.today])
-  # end
-
-  # def self.upcoming
-  #     Event.where(["date > ?", Date.today])
-  # end
 
   private
 
