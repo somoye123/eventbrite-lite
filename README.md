@@ -25,6 +25,12 @@ $ yarn install --check-files
 $ rails db:migrate
 ~~~
 
+## To run Test
+
+~~~ruby
+$ rails test
+~~~
+
 # Authors
 
 👤 **Somoye**
