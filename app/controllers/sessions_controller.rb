@@ -2,11 +2,8 @@ class SessionsController < ApplicationController
   def new; end
 
   def create
-    begin
-      @user = User.find_by(name: params[:session][:user]) || User.find(params[:session][:user].to_i)
-    rescue StandardError => e
-      flash.now[:danger] = 'There was something wrong with the login information'
-    end
+    @user = User.find_by(name: params[:session][:user])
+    @user ||= User.find(params[:session][:user].to_i)
 
     if @user
       session[:user_id] = @user.id
