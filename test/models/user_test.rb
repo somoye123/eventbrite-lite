@@ -21,4 +21,5 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user2.valid?
   end
 
+
 end
