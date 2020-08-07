@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-
   def setup
     @user = User.new(name: 'Uduak')
   end
@@ -11,7 +10,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test 'user name should be present' do
-    @user.name = " "
+    @user.name = ' '
     assert_not @user.valid?
   end
 
@@ -20,6 +19,4 @@ class UserTest < ActiveSupport::TestCase
     @user2 = User.new(name: 'Uduak')
     assert_not @user2.valid?
   end
-
-
 end

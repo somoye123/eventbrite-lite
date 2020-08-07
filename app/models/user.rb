@@ -6,7 +6,6 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates_uniqueness_of :name
 
-
   scope :past, -> { where(['date < ?', Date.today]) }
   scope :upcoming, -> { where(['date > ?', Date.today]) }
 end

@@ -50,5 +50,5 @@ end
 gem 'bootstrap', '~> 4.5.0'
 gem 'hirb'
 gem 'jquery-rails'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'rails-controller-testing'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
