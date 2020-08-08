@@ -1,24 +1,56 @@
-# README
+# Members Only Rails Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+In this project, we built a site similar to a private Eventbrite which allows users to create events and then manage user signups. Users can create events and send invitations and parties. Events take place at a specific date and at a location.
 
-Things you may want to cover:
+![screenshot](./screenshot.gif)
 
-* Ruby version
+## Built With
 
-* System dependencies
+- Ruby on Rails
+- Ruby
 
-* Configuration
+# Getting Started
 
-* Database creation
+To get a local copy of the repository please run the following commands on your terminal:
 
-* Database initialization
+```
+$ cd <folder>
+```
 
-* How to run the test suite
+~~~bash
+$ git clone https://github.com/somoye123/eventbrite-lite.git
+$ cd eventbrite-lite
+$ bundle install 
+$ yarn install --check-files
+$ rails db:migrate
+~~~
 
-* Services (job queues, cache servers, search engines, etc.)
+## To run Test
 
-* Deployment instructions
+~~~ruby
+$ rails test
+~~~
 
-* ...
+# Authors
+
+👤 **Somoye**
+
+- Github:[@somoye123](https://github.com/somoye123)
+- Twitter:[@ayotunde_197](https://twitter.com/ayotunde_197)
+- LinkedIn:[Somoye Ayotunde](https://www.linkedin.com/in/somoye-ayotunde-03a471161)
+
+
+👤 **Uduak Essien**
+
+- Github: [@acushlakoncept](https://github.com/acushlakoncept/)
+- Twitter: [@acushlakoncept](https://twitter.com/acushlakoncept)
+- Linkedin: [acushlakoncept](https://www.linkedin.com/in/acushlakoncept/)
+
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+## Show your support
+
+Give a ⭐️ if you like this project!
